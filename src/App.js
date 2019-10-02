@@ -8,28 +8,16 @@ function App({users, labels, index}) {
     "id": 1,
     "name": "박형준",
     "incoming": "09",
-    "status": "졸업",
     "number": "1기",
     "major_1": "경영학과",
-    "major_2": "경영학과", 
-    "phone": "010-1234-0000",
-    "email": "hottest.park@test.com",
-    "workplace": "삼성전자",
-    "jobtitle": "HR",
     "updated_at": "2019-09-30 21:00:00"
   },
   {
       "id": 2,
       "name": "이진재",
-      "incoming": "15",
-      "status": "재학",
+      "incoming": "09",
       "number": "14기",
       "major_1": "건축사회환경공학과",
-      "major_2": "경영학과", 
-      "phone": "010-1234-0000",
-      "email": "test.lee@test.co.kr",
-      "workplace": "",
-      "jobtitle": "",
       "updated_at": "2019-09-30 21:00:00"
   }];
   const [data, setData] = useState(initialData);
@@ -37,9 +25,11 @@ function App({users, labels, index}) {
   const addItem = () => {
     const name = document.querySelector('#nameinput').value.trim();
     const number = document.querySelector('#numberinput').value.trim();
+    const incoming = document.querySelector('#incominginput').value.trim();
+    const major_1 = document.querySelector('#major1input').value.trim();
     if (name && number) {
       const nextState = produce(data, draftState => {
-        draftState.push({ name, number });
+        draftState.push({ name, number, incoming, major_1 });
       });
       document.querySelector('#nameinput').value = '';
       document.querySelector('#numberinput').value = '';
@@ -63,15 +53,9 @@ function App({users, labels, index}) {
             <tr className="user-list-item-container">
               <td className="user-list-item"><input id="numberinput" type="text"/></td>  
               <td className="user-list-item"><input id="nameinput" type="text"/></td>  
+              <td className="user-list-item"><input id="incominginput" type="text"/></td>
+              <td className="user-list-item"><input id="major1input" type="text"/></td>
               <td className="user-list-item"></td>
-              <td className="user-list-item"></td>  
-              <td className="user-list-item"></td>  
-              <td className="user-list-item"></td>  
-              <td className="user-list-item"></td>  
-              <td className="user-list-item"></td>  
-              <td className="user-list-item"></td>    
-              <td className="user-list-item"></td>                  
-              <td className="user-list-item"></td>  
               <td className="user-list-item"><div onClick={() => addItem()}>추가</div></td>  
               <td className="user-list-item"><div>리셋</div></td>  
             </tr>
