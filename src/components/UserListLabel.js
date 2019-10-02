@@ -11,7 +11,6 @@ export default function UserListLabel() {
                 <td className="user-list-label">본전공</td>
                 <td className="user-list-label">업데이트</td>
                 <td className="user-list-label"></td>
-                <td className="user-list-label"></td>
             </tr>
         </>
     )

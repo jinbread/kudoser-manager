@@ -1,5 +1,5 @@
 .user-list {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'open-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1em;
   font-weight: 600;
   width: 100%;
@@ -7,7 +7,7 @@
   color: #333;
   margin: 40px auto;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border-collapse: collapse;
 }
 
@@ -21,13 +21,24 @@
   text-align: center;
 }
 
+.user-list-input {
+  max-width: 180px;
+  text-align: center;
+  padding: 0;
+}
+
 .user-list-label {
   font-size: 0.9em;
   opacity: .4;
 }
 
 .user-list-item-container:hover {
+  background: #e7e7e7;
+}
+
+.user-list-input-container {
   background: #eee;
+  /* border: 1px solid #333; */
 }
 
 .title {
@@ -35,17 +46,26 @@
 }
 
 input {
-  width: 60px;
-  height: 24px; 
+  background: #eee;
+  height: 62px; 
   font-size: 1em;
   text-align: center;
-  
+  border: 0px; 
 }
 
-button {
-  height: 24px;
-  width: 44px;
-  background: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.user-list-btn {
+  width: 96px;
+  text-align: right;
+}
+
+.button {
+  display: inline-block;
+  margin: 12px 8px;
+  text-align: center;
+  padding: 4px;
+  width: 24px;
+}
+
+.button:hover {
+  opacity: .2;
 }
